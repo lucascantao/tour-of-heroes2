@@ -5,14 +5,14 @@
             <span class="badge">{{hero.id}}</span>
             <span class="name">{{hero.name}}</span>
         </button>
-
-        <div *ngIf="selectedHero">
-            <h2>{{selectedHero.name}} Details</h2>
-            <div>id: {{selectedHero.id}}</div>
-            <div>
-                <label for="hero-name">Hero name:</label>
-                <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-            </div>
-        </div>
+        
     </li>
+    <div *ngIf="selectedHero">
+        <h2>{{selectedHero.name}} Details</h2>
+        <div>id: {{selectedHero.id}}</div>
+        <div>
+            <label for="hero-name">Hero name:</label>
+            <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+        </div>
+    </div>
 </ul>
