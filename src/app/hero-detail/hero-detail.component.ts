@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { Observable } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -35,6 +36,13 @@ export class HeroDetailComponent {
 
   goBack(): void {
     this.location.back();
+  }
+  
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
   }
 
 }
